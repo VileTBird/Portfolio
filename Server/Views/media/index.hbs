@@ -29,6 +29,7 @@
             <p>{{this.rating}}</p>
             <p>{{this.username}}</p>
             <a href="{{this.provider}}" style="color:blue;"> Project Link</a>
+            {{#if ../user}}
             <a href="/media/edit/{{this._id}}" class="btn btn-primary">
                 Edit
             </a>
@@ -36,6 +37,8 @@
                 onclick="return confirm('For real??');">
                 Delete
             </a>
+            {{/if}}
+            
         </li>
     {{/each}}
 </ul>
