@@ -1,0 +1,43 @@
+<h1>Add New Media</h1>
+<form method="post">
+    <fieldset>
+        <label for="type">Type: *</label>
+        <select name="type" id="type">
+            <option>Data Science/Ml</option>
+            <option>Web Dev</option>
+            <option>App Dev</option>
+            <option>Game Dev</option>
+            <option>General</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="title">Title: *</label>
+        <input name="title" id="title" required />
+    </fieldset>
+    <fieldset>
+        <label for="releaseYear">Year: </label>
+        <input type="number" name="releaseYear" id="releaseYear" min="1500" />
+    </fieldset>
+    <fieldset>
+        <label for="provider">Link: *</label>
+        <input name="provider" id="provider" required />
+    </fieldset>
+    <fieldset>
+        <label for="description">Description: *</label>
+        <input name="description" id="description" required />
+    </fieldset>
+    <fieldset>
+        <label for="status">Status: *</label>
+        <select name="status" id="status">
+            <option>Completed</option>
+            <option>In Progress</option>
+            <option selected>Being Planned</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="rating">Difficulty: *</label>
+        <input type="number" name="rating" id="rating" min="1" max="5">
+    </fieldset>
+    <input name="username" id="username" type="hidden" value="{{user.username}}" />
+    <button class="btn btn-primary offset-2">Save</button>
+</form>

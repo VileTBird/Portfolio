@@ -1,0 +1,41 @@
+<style>
+    .card {
+        /* Your existing card styles */
+        /* Add transition for smooth hover effect */
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        /* Apply scaling effect on hover */
+        transform: scale(1.05);
+        /* Add box shadow for depth effect */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<!-- Your HTML code for the project library -->
+<h1>Project Library</h1>
+{{#if user}}
+    <a href="/media/create">Add New Media</a>
+{{/if}}
+<ul class="row card-group">
+    {{#each media}}
+        <li class="card m-4 text-center col-lg-4">
+            <h5>{{this.title}}</h5>
+            <h6>{{this.type}}</h6>
+            <p>{{this.description}}</p>
+            <p>{{this.releaseYear}}</p>
+            <p>{{this.status}}</p>
+            <p>{{this.rating}}</p>
+            <p>{{this.username}}</p>
+            <a href="{{this.provider}}" style="color:blue;"> Project Link</a>
+            <a href="/media/edit/{{this._id}}" class="btn btn-primary">
+                Edit
+            </a>
+            <a href="/media/delete/{{this._id}}" class="btn btn-primary"
+                onclick="return confirm('For real??');">
+                Delete
+            </a>
+        </li>
+    {{/each}}
+</ul>
