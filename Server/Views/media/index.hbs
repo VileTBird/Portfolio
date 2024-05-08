@@ -1,44 +1,75 @@
-<style>
-    .card {
-        /* Your existing card styles */
-        /* Add transition for smooth hover effect */
-        transition: transform 0.3s ease;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Library</title>
+    <style>
+        /* Card styles */
+        .card {
+            width: 300px; /* Set fixed width */
+            height: 400px; /* Set fixed height */
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow: hidden; /* Hide overflow content */
+        }
 
-    .card:hover {
-        /* Apply scaling effect on hover */
-        transform: scale(1.05);
-        /* Add box shadow for depth effect */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-</style>
+        /* Hover effect */
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
 
-<!-- Your HTML code for the project library -->
-<h1>Project Library</h1>
-{{#if user}}
-    <a href="/media/create">Add New Media</a>
-{{/if}}
-<ul class="row card-group">
-    {{#each media}}
-        <li class="card m-4 text-center col-lg-4">
-            <h5>{{this.title}}</h5>
-            <h6>{{this.type}}</h6>
-            <p>{{this.description}}</p>
-            <p>{{this.releaseYear}}</p>
-            <p>{{this.status}}</p>
-            <p>{{this.rating}}</p>
-            <p>{{this.username}}</p>
-            <a href="{{this.provider}}" style="color:blue;"> Project Link</a>
-            {{#if ../user}}
-            <a href="/media/edit/{{this._id}}" class="btn btn-primary">
-                Edit
-            </a>
-            <a href="/media/delete/{{this._id}}" class="btn btn-primary"
-                onclick="return confirm('For real??');">
-                Delete
-            </a>
-            {{/if}}
-            
-        </li>
-    {{/each}}
-</ul>
+        /* Title style */
+        .card h5 {
+            margin-bottom: 10px;
+        }
+
+        /* Description style */
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        /* Links style */
+        .card a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        /* Container styles */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project Library</h1>
+    <!-- Your HTML code for the project library -->
+    <div class="card-container">
+        {{#each media}}
+            <div class="card">
+                <h5>{{this.title}}</h5>
+                <h6>{{this.type}}</h6>
+                <p>{{this.description}}</p>
+                <p>{{this.releaseYear}}</p>
+                <p>{{this.status}}</p>
+                <p>{{this.rating}}</p>
+                <p>{{this.username}}</p>
+                <a href="{{this.provider}}">Project Link</a>
+                {{#if ../user}}
+                    <a href="/media/edit/{{this._id}}" class="btn btn-primary">Edit</a>
+                    <a href="/media/delete/{{this._id}}" class="btn btn-primary" onclick="return confirm('For real??');">Delete</a>
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
+</body>
+</html>
