@@ -48,13 +48,23 @@
             align-items: flex-start;
             padding: 20px;
         }
+
+        .card-link {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color */
+        }
     </style>
 </head>
 <body>
     <h1>Project Library</h1>
     <!-- Your HTML code for the project library -->
+    {{#if user}}
+        <a href="media/create">Add new Project</a>
+    {{/if}}
+    <p>Just clicking on the project card will take you to the project repo!</p>
     <div class="card-container">
         {{#each media}}
+        <a href="{{this.provider}}" class="card-link">
             <div class="card">
                 <h5>{{this.title}}</h5>
                 <h6>{{this.type}}</h6>
@@ -62,12 +72,12 @@
                 <p>{{this.releaseYear}}</p>
                 <p>{{this.status}}</p>
                 <p>Difficulty rating: {{this.rating}}/5</p>
-                <a href="{{this.provider}}">Project Link</a>
                 {{#if ../user}}
                     <a href="/media/edit/{{this._id}}" class="btn btn-primary">Edit</a>
                     <a href="/media/delete/{{this._id}}" class="btn btn-primary" onclick="return confirm('For real??');">Delete</a>
                 {{/if}}
             </div>
+            </a>
         {{/each}}
     </div>
 </body>
