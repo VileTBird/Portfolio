@@ -74,6 +74,9 @@ hbs.registerHelper('selectOption', (currentValue, selectedValue) => {
   return new hbs.SafeString(`<option${selectedProperty}>${currentValue}</option>`);
 });
 
+//directs the site where to go for image assets
+app.use('/img', express.static(path.join(__dirname, '../../Client/Assets/images')));
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
