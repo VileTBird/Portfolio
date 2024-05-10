@@ -7,22 +7,22 @@ body {
 }
 
 .navbar-dark {
-    background-color: #1A1C20;
+    background-color: #FF90BC;
 }
 
 h1, a {
-    color: #f4f4f4;
+    color: #8ACDD7;
 }
 
 main {
     padding-top: 20px;
-    background-color: #1A1C20;
-    color: #f4f4f4;
+    background-color: #FF90BC;
+    color: #8ACDD7;
 }
 
 body {
-    background-color: #1A1C20;
-    color: #f4f4f4;
+    background-color: #FF90BC; 
+    color: #8ACDD7;
 }
 
 fieldset {
@@ -34,8 +34,8 @@ label {
 }
 
 .btn-primary {
-    background-color: #1A1C20;
-    color: #f4f4f4;
+    background-color: #FF90BC;
+    color: #8ACDD7;
 }
 
 input {

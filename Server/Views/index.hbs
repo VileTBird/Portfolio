@@ -1,3 +1,72 @@
-<h1>Welcome to {{title}}!</h1>
-<p>My name is Pavel and this is my Personal portfolio! Look around, you might find something you'd like.</p>
+
+    <title>{{title}}</title>
+    <style>
+        /* Card styles */
+        .card {
+            width: 50px; /* Set fixed width */
+            height: 50px; /* Set fixed height */
+            padding: 20px;
+            margin: 10px;
+            background-color: #A0DEFF;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow: hidden; /* Hide overflow content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .fa-brands,
+        .fa-solid {
+            font-size: 15px; /* Adjust icon size */
+            margin-bottom: 5px; /* Add space between icon and text */
+        }
+
+        /* Title style */
+        .card p {
+            font-size: 14px; /* Adjust text size */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Container styles */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            list-style: none; /* Remove bullet points */
+        }
+
+        .card-link {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color */
+        }
+    </style>
+</head>
+<body>
+    <ul class="row card-container">
+        <li class="card m-4 text-center">
+            <i class="fa-brands fa-github" style="color: #FF90BC;"></i>
+        </li>
+        <li class="card m-4 text-center">
+            <i class="fa-brands fa-linkedin-in" style="color: #FF90BC;"></i>
+        </li>
+        <li class="card m-4 text-center">
+            <i class="fa-brands fa-instagram" style="color: #FF90BC;"></i>
+        </li>
+        <li class="card m-4 text-center">
+            <i class="fa-solid fa-envelope" style="color: #FF90BC;"></i>
+        </li>
+        <li class="card m-4 text-center">
+            <i class="fa-solid fa-link" style="color: #FF90BC;"></i>
+        </li>
+    </ul>
 

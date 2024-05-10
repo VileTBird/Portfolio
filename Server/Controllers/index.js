@@ -11,7 +11,7 @@ const User = require('../Models/user');
 function DisplayHome(req, res, next)
 {
   /* Now Render the hbs page */
-  res.render('index', {title: 'my portfolio', page: 'home', user: req.user});
+  res.render('index', {title: 'Pavels portfolio', page: 'home', user: req.user});
 }
 
 function DisplayAbout(req, res, next) {
