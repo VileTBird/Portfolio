@@ -1,77 +1,99 @@
 
-    <title>{{title}}</title>
+        <title>{{title}}</title>
 
-    <h1>Welcome to {{title}}</h1>
-    <p>This site is a CRUD application with user authentication for managing projects. I work on multiple projects, so I opted for a dynamic approach by incorporating CRUD operations and forms into my portfolio instead of hardcoding HTML.</p>
-    <p>Explore my projects in the project library or learn more about me! Feel free to reach out via social media links below for collaboration, recruitment, or just to chat.</p>
+        <h1>Welcome to {{title}}</h1>
+        <p>This site is a CRUD application with user authentication for managing projects. I work on multiple projects, so I opted for a dynamic approach by incorporating CRUD operations and forms into my portfolio instead of hardcoding HTML.</p>
+        <p>Explore my projects in the project library or learn more about me! Feel free to reach out via social media links or by email from below for collaboration, recruitment, or just to chat.</p>
 
-    <style>
-        /* Card styles */
-        .card {
-            width: 50px; /* Set fixed width */
-            height: 50px; /* Set fixed height */
-            padding: 20px;
-            margin: 10px;
-            background-color: #A0DEFF;
-            border-radius: 15px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            overflow: hidden; /* Hide overflow content */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        <style>
+            /* Card styles */
+            .card {
+                width: 50px; /* Set fixed width */
+                height: 50px; /* Set fixed height */
+                padding: 20px;
+                margin: 10px;
+                background-color: #A0DEFF;
+                border-radius: 15px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                overflow: hidden; /* Hide overflow content */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
-        .card:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-        }
+            .card:hover {
+                transform: scale(1.1);
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            }
 
-        .fa-brands,
-        .fa-solid {
-            font-size: 15px; /* Adjust icon size */
-            margin-bottom: 5px; /* Add space between icon and text */
-        }
+            .fa-brands,
+            .fa-solid {
+                font-size: 15px; /* Adjust icon size */
+                margin-bottom: 5px; /* Add space between icon and text */
+            }
 
-        /* Title style */
-        .card p {
-            font-size: 14px; /* Adjust text size */
-            margin: 0; /* Remove default margin */
-        }
+            /* Title style */
+            .card p {
+                font-size: 14px; /* Adjust text size */
+                margin: 0; /* Remove default margin */
+            }
 
-        /* Container styles */
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-            list-style: none; /* Remove bullet points */
-        }
+            /* Container styles */
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 20px;
+                list-style: none; /* Remove bullet points */
+            }
 
-        .card-link {
-            text-decoration: none; /* Remove underline */
-            color: inherit; /* Inherit text color */
-        }
-    </style>
-</head>
-<body>
-    <ul class="row card-container">
-        <li class="card m-4 text-center">
-            <i class="fa-brands fa-github" style="color: #F11A7B;"></i>
-        </li>
-        <li class="card m-4 text-center">
-            <i class="fa-brands fa-linkedin-in" style="color: #F11A7B;"></i>
-        </li>
-        <li class="card m-4 text-center">
-            <i class="fa-brands fa-instagram" style="color: #F11A7B;"></i>
-        </li>
-        <li class="card m-4 text-center">
-            <i class="fa-solid fa-envelope" style="color: #F11A7B;"></i>
-        </li>
-        <li class="card m-4 text-center">
-            <i class="fa-solid fa-link" style="color: #F11A7B;"></i>
-        </li>
-    </ul>
+            .card-link {
+                text-decoration: none; /* Remove underline */
+                color: inherit; /* Inherit text color */
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="row card-container">
+            <li class="card m-4 text-center">
+                <a href="https://github.com/Pavelrh">
+                    <i class="fa-brands fa-github" style="color: #F11A7B;"></i>
+                </a>
+                
+            </li>
+            <li class="card m-4 text-center">
+                <a href="https://www.linkedin.com/in/shridhara-pavel-rahul-uma-4248a4265/">
+                    <i class="fa-brands fa-linkedin-in" style="color: #F11A7B;"></i>
+                </a>
+            </li>
+            <li class="card m-4 text-center">
+                <a href="instagram.com/kozorah">
+                    <i class="fa-brands fa-instagram" style="color: #F11A7B;"></i>
+                </a>
+                
+            </li>
+            <li class="card m-4 text-center" onclick="copyEmailToClipboard()">
+                <a >
+                    <i class="fa-solid fa-envelope" style="color: #F11A7B;"></i>
+                </a>
+            </li>
+            <li class="card m-4 text-center">
+                <a href="https://linktr.ee/Shridhara_Pavel">
+                    <i class="fa-solid fa-link" style="color: #F11A7B;"></i>
+                </a>
+            </li>
+        </ul>
 
+    <script>
+            function copyEmailToClipboard() {
+                var email = "shridharapavel@email.com"; 
+                navigator.clipboard.writeText(email).then(function() {
+                    alert("My email has been copied to your clipboard. Email me!");
+                }, function(err) {
+                    console.error('Unable to copy email: ', err);
+                });
+            }
+        </script>
