@@ -13,6 +13,7 @@ const session = require('express-session');
 // Routing modules
 const indexRouter = require('../Routes/index');
 const mediaRouter = require('../Routes/media');
+const blogRouter = require('../Routes/blog');
 const authRouter = require('../Routes/auth');
 
 const app = express();
@@ -59,6 +60,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use('/auth', authRouter);
 app.use('/media', mediaRouter);
+app.use('/blog', blogRouter);
 app.use('/', indexRouter);
 
 // hbs custom helpers
