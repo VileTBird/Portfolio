@@ -1,99 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Roboto:wght@300&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
 
-        <title>{{title}}</title>
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #000000;
+        }
 
-        <h1>Welcome to {{title}}</h1>
-        <p>This site is a CRUD application with user authentication for managing projects. I work on multiple projects, so I opted for a dynamic approach by incorporating CRUD operations and forms into my portfolio instead of hardcoding HTML.</p>
-        <p>Explore my projects in the project library or learn more about me! Feel free to reach out via social media links or by email from below for collaboration, recruitment, or just to chat.</p>
+        header h1 {
+            font-family: 'Lora', serif;
+            font-size: 48px;
+            font-weight: bold;
+        }
 
-        <style>
-            /* Card styles */
-            .card {
-                width: 50px; /* Set fixed width */
-                height: 50px; /* Set fixed height */
-                padding: 20px;
-                margin: 10px;
-                background-color: #A0DEFF;
-                border-radius: 15px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
-                overflow: hidden; /* Hide overflow content */
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+        header p {
+            font-size: 24px;
+            color: #FFD700;
+        }
 
-            .card:hover {
-                transform: scale(1.1);
-                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-            }
+        .container {
+            padding: 20px;
+        }
 
-            .fa-brands,
-            .fa-solid {
-                font-size: 15px; /* Adjust icon size */
-                margin-bottom: 5px; /* Add space between icon and text */
-            }
+        .section {
+            margin: 40px 0;
+        }
 
-            /* Title style */
-            .card p {
-                font-size: 14px; /* Adjust text size */
-                margin: 0; /* Remove default margin */
-            }
+        .section h2 {
+            font-size: 36px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+        }
 
-            /* Container styles */
-            .card-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 20px;
-                list-style: none; /* Remove bullet points */
-            }
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
 
-            .card-link {
-                text-decoration: none; /* Remove underline */
-                color: inherit; /* Inherit text color */
-            }
-        </style>
-    </head>
-    <body>
-        <ul class="row card-container">
-            <li class="card m-4 text-center">
-                <a href="https://github.com/Pavelrh">
-                    <i class="fa-brands fa-github" style="color: #F11A7B;"></i>
-                </a>
-                
-            </li>
-            <li class="card m-4 text-center">
-                <a href="https://www.linkedin.com/in/shridhara-pavel-rahul-uma-4248a4265/">
-                    <i class="fa-brands fa-linkedin-in" style="color: #F11A7B;"></i>
-                </a>
-            </li>
-            <li class="card m-4 text-center">
-                <a href="https://www.instagram.com/kozorah/">
-                    <i class="fa-brands fa-instagram" style="color: #F11A7B;"></i>
-                </a>
-                
-            </li>
-            <li class="card m-4 text-center" onclick="copyEmailToClipboard()">
-                <a >
-                    <i class="fa-solid fa-envelope" style="color: #F11A7B;"></i>
-                </a>
-            </li>
-            <li class="card m-4 text-center">
-                <a href="https://linktr.ee/Shridhara_Pavel">
-                    <i class="fa-solid fa-link" style="color: #F11A7B;"></i>
-                </a>
-            </li>
-        </ul>
+        .card:hover {
+            transform: scale(1.05);
+        }
 
-    <script>
-            function copyEmailToClipboard() {
-                var email = "shridharapavel@email.com"; 
-                navigator.clipboard.writeText(email).then(function() {
-                    alert("My email has been copied to your clipboard. Email me!");
-                }, function(err) {
-                    console.error('Unable to copy email: ', err);
-                });
-            }
-        </script>
+        .card p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card-container .card {
+        background-color: #1a1a1a;
+        border-radius: 50%;
+        padding: 10px; /* Adjust the padding to make it small */
+        margin: 10px; /* Adjust the margin to fit the design */
+        box-shadow: none; /* Remove shadow for a cleaner look */
+        width: 50px; /* Set a fixed width */
+        height: 50px; /* Set a fixed height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card-container .card i {
+        font-size: 24px; /* Adjust icon size to fit the small card */
+    }
+
+        .life-section {
+            background-color: #111111;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .life-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .card i {
+            font-size: 24px;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="font-family: 'Lora', serif;
+    font-family: 'Roboto', sans-serif;">Shridhara Pavel. R. U</h1>
+    <ul class="row card-container">
+    <li class="card m-4 text-center">
+        <a href="https://github.com/Pavelrh">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </li>
+    <li class="card m-4 text-center">
+        <a href="https://www.linkedin.com/in/shridhara-pavel-rahul-uma-4248a4265/">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+    </li>
+    <li class="card m-4 text-center">
+        <a href="https://www.instagram.com/kozorah/">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </li>
+    <li class="card m-4 text-center" onclick="copyEmailToClipboard()">
+        <i class="fa-solid fa-envelope"></i>
+    </li>
+    <li class="card m-4 text-center">
+        <a href="https://linktr.ee/Shridhara_Pavel">
+            <i class="fa-solid fa-link"></i>
+        </a>
+    </li>
+</ul>
+    <p>AI Engineer | Entrepreneur | Innovator</p>
+        <p>Explore my projects in the project library, read my blog or learn more about me, my experience & education down below! Feel free to reach out via social media links or by email from below for collaboration, recruitment, or just to chat.</p>
+</header>
+
+<div class="container">
+
+    <section class="section about">
+        <h2>Who is this guy?</h2>
+        <p>Hey there! I'm Shridhara Pavel, a tech enthusiast working mostly on AI research papers and startups. Over the past couple of years, I've been freelancing, creating games, leading/building startups, developing websites and training machine learning models.</p>
+
+        <p>I run three cool startups under my holding company 41 Inc.:</p>
+
+        <p>1. Kozot: Crafting smart devices and robotics for smart cities.</p>
+        <p>2. Locallu: Building the world's first multi-LLM interaction x human engine for a groundbreaking approach to AGI.</p>
+        <p>3. LegalDad: Making legal document prep super easy for everyone.</p>
+
+        <p>I'm also writing a paper with a computer science professor on Self-Observing agents & Real-Time Decision Making Engines, though I can't spill all the details just yet.</p>
+
+        <p>I love bringing my wild abstract ideas to life with Unity, Kotlin, Android Studio, and Full stack frameworks, but my true passion is in AI, Machine Learning & entrepreneurship. This has been a game-changer for my startups. My non technical skills also includes team management, public pitching in events, fund-raising, and working at hackathons, which have sharpened my communication and leadership skills.</p>
+
+        <p>One of my proudest moments was being considered for a $25K grant by Internet computer (ICP), which shows the impact of my work.</p>
+
+        <p>I'm always up for new challenges and opportunities to innovate. Let's connect and create something awesome together!</p>
+    </section>
+
+    <section class="section experience">
+        <h2>Experience</h2>
+        <div class="card-container">
+            <!-- Repeat this card structure for each experience -->
+            <div class="card">
+                <h3>Technical Team Lead</h3>
+                <h6>Locallu <i>Feb 2024 - Present</i></h6>
+                <p>Leading a team of developers to create a multi-LLM interaction engine.</p>
+            </div>
+            <div class="card">
+                <h3>FullStack Dev</h3>
+                <h6>Rahul Advocate Office <i>Jan 2024 - Present</i></h6>
+                <p>Solo Developed an Angular Site for a Lawyer's Office, my roles include development, deployment, maintenance, & security.</p>
+            </div>
+            <div class="card">
+                <h3>Ai Engineer</h3>
+                <h6>Human  worker</h6>
+                <p>Developing a decentralized marketplace for AI-human task delegation.</p>
+            </div>
+            <div class="card">
+                <h3>Lead Developer</h3>
+                <h6>LegalDad <i>June 2024 - Present</i></h6>
+                <p>Building a Conversational AI assistant for Legal Drafting for Lawyers from High Court of Madras Madurai.</p>
+            </div>
+            <div class="card">
+                <h3>Paralegal Assistant</h3>
+                <h6>Highcourt of Madras Madurai Branch <i>Jan 2019 - Present</i></h6>
+                <p>Drafted Legal Docs, Arguments and offered legal advice to clients.</p>
+            </div>
+            <div class="card">
+                <h3>Crew Member</h3>
+                <h6>McDonalds <i>Oct 2023 - Present</i></h6>
+                <p>Offer high quality customer service to customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section life">
+        <h2>Life</h2>
+        <div class="life-section">
+            <p>Sharing my journey and important milestones:</p>
+            <img src="/mnt/data/image.png" alt="Image Description">
+        </div>
+    </section>
+
+</div>
+
+<!-- Social Media and Contact Cards -->
+<!-- Social Media and Contact Cards -->
+
+
+
+<script>
+    function copyEmailToClipboard() {
+        var email = "shridharapavel@email.com"; 
+        navigator.clipboard.writeText(email).then(function() {
+            alert("My email has been copied to your clipboard. Email me!");
+        }, function(err) {
+            console.error('Unable to copy email: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
