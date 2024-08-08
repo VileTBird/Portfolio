@@ -27,7 +27,7 @@ function DisplayAbout(req, res, next) {
 function DisplayCv(req, res, next) {
   let date = new Date();
 
-  res.render('Cv', {
+  res.render('cv', {
     title: 'CV',
     date: date,
     user: req.user
@@ -35,7 +35,7 @@ function DisplayCv(req, res, next) {
 }
 
 function DisplayLife(req, res, next) {
-  res.render('Life', {
+  res.render('life', {
     title: 'Life',
     user: req.user
   });
