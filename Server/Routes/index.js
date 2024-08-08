@@ -26,5 +26,9 @@ router.get('/cv', (req, res, next) => {
     IndexController.DisplayCv(req, res, next);
 });
 
+router.get('/life', (req, res, next) => {
+    IndexController.DisplayLife(req, res, next);
+});
+
 
 module.exports = router;

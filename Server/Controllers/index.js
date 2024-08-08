@@ -34,10 +34,19 @@ function DisplayCv(req, res, next) {
   });
 }
 
+function DisplayLife(req, res, next) {
+  res.render('Life', {
+    title: 'Life',
+    user: req.user
+  });
+}
+
+
 module.exports = {
  DisplayHome: DisplayHome,
  DisplayAbout: DisplayAbout,
- DisplayCv: DisplayCv
+ DisplayCv: DisplayCv,
+ DisplayLife: DisplayLife
 }
 
   
