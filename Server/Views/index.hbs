@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
+    <title>Shridhara Pavel R. U</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Roboto:wght@300&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #000000;
-            color: #FFFFFF;
+            background-color: #1E1E1E;
+            color: #E0E0E0;
             margin: 0;
             padding: 0;
         }
@@ -24,47 +24,58 @@
 
         header {
             text-align: center;
-            padding: 30px 10px;
-            background-color: #000000;
+            padding: 50px 10px;
+            background-color: #1E1E1E;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-family: 'Lora', serif;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
-        }
-
-        header p {
-            font-size: 16px;
             color: #FFD700;
         }
 
+        header p {
+            font-size: 18px;
+            color: #B0B0B0;
+            margin: 10px 0;
+        }
+
         .section {
-            margin: 30px 0;
+            margin: 50px 0;
+            padding: 20px;
+            background-color: #252424;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .section h2 {
-            font-size: 24px;
+            font-size: 28px;
             border-bottom: 2px solid #FFD700;
             padding-bottom: 5px;
+            color: #FFD700;
         }
 
         .card {
-            background-color: #1a1a1a;
+            background-color: #2A2A2A;
             border-radius: 15px;
-            padding: 15px;
-            margin: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
         .card p {
             font-size: 16px;
-            margin: 0;
+            margin: 10px 0;
+            color: #E0E0E0;
         }
 
         .card-container {
@@ -74,17 +85,8 @@
         }
 
         .card-container .card {
-            background-color: #1a1a1a;
-            border-radius: 50%;
-            padding: 5px;
-            margin: 5px;
-            box-shadow: none;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            width: calc(33% - 40px);
+            margin: 20px;
         }
 
         .card-container .card i {
@@ -93,8 +95,8 @@
         }
 
         .life-section {
-            background-color: #111111;
-            padding: 15px;
+            background-color: #2A2A2A;
+            padding: 20px;
             border-radius: 15px;
         }
 
@@ -115,33 +117,28 @@
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 20px;
+                font-size: 28px;
             }
 
             header p {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             .section h2 {
-                font-size: 20px;
-            }
-
-            .card p {
-                font-size: 14px;
+                font-size: 24px;
             }
 
             .card-container .card {
-                width: 30px;
-                height: 30px;
-                padding: 3px;
-            }
-
-            .card-container .card i {
-                font-size: 16px;
+                width: calc(50% - 40px);
             }
         }
 
-        /* New styles for the "Who is this guy?" section */
+        @media (max-width: 480px) {
+            .card-container .card {
+                width: calc(100% - 40px);
+            }
+        }
+
         .about p {
             font-size: 18px;
             line-height: 1.6;
@@ -154,40 +151,41 @@
         }
 
         .about li {
-            background-color: #1a1a1a;
+            background-color: #333333;
             border-radius: 10px;
             padding: 10px;
             margin: 10px 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-        /* New styles for the "Experience" section */
         .experience .experience-item {
-            background-color: #1a1a1a;
+            background-color: #2A2A2A;
             border-radius: 15px;
             padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .experience .experience-item h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+            color: #ffffff;
         }
 
         .experience .experience-item h4 {
             font-size: 18px;
-            color: #FFD700;
+            color: #ffffff;
         }
 
         .experience .experience-item p {
             font-size: 16px;
             margin: 10px 0;
+            color: #E0E0E0;
         }
 
         .experience .experience-item .date {
             background-color: #333333;
-            color: #FFD700;
+            color: #ffffff;
             padding: 5px 10px;
             border-radius: 5px;
             display: inline-block;
@@ -198,6 +196,22 @@
             list-style-type: disc;
             padding-left: 20px;
         }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1E1E1E;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #B0B0B0;
+        }
+
+        footer p a {
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -205,39 +219,14 @@
 
     <div class="container">
         <header>
-            <h1 style="font-family: 'Lora', serif; font-family: 'Roboto', sans-serif;">Shridhara Pavel. R. U</h1>
-            <ul class="row card-container">
-                <li class="card m-4 text-center">
-                    <a href="https://github.com/Pavelrh">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-                <li class="card m-4 text-center">
-                    <a href="https://www.linkedin.com/in/shridhara-pavel-rahul-uma-4248a4265/">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-                <li class="card m-4 text-center">
-                    <a href="https://www.instagram.com/kozorah/">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="card m-4 text-center" onclick="copyEmailToClipboard()">
-                    <i class="fas fa-envelope"></i>
-                </li>
-                <li class="card m-4 text-center">
-                    <a href="https://linktr.ee/Shridhara_Pavel">
-                        <i class="fas fa-link"></i>
-                    </a>
-                </li>
-            </ul>
+            <h1>Shridhara Pavel R. U</h1>
             <p>AI Engineer | Entrepreneur | Innovator</p>
-            <p>Explore my projects in the project library, read my blog or learn more about me, my experience & education down below! Feel free to reach out via social media links or by email from below for collaboration, recruitment, or just to chat.</p>
+            <p>Explore my projects in the project library, read my blog, or learn more about me, my experience & education down below! Feel free to reach out via social media links or by email for collaboration, recruitment, or just to chat.</p>
         </header>
 
         <section class="section about">
             <h2>Who is this guy?</h2>
-            <p>Hey there! I'm Shridhara Pavel, a tech enthusiast working mostly on AI research papers and startups. Over the past couple of years, I've been freelancing, creating games, leading/building startups, developing websites, and training machine learning models.</p>
+            <p>Hey there! I'm Shridhara Pavel, a tech nerd working mostly on AI research papers and startups. Over the past couple of years, I've been freelancing, creating games, leading/building startups, developing websites, and training machine learning models.</p>
 
             <p>I run three cool startups under my holding company 41 Inc.:</p>
             <ul>
@@ -246,83 +235,53 @@
                 <li>LegalDad: Making legal document prep super easy for everyone.</li>
             </ul>
 
-            <p>I'm also writing a paper with a computer science professor on Self-Observing agents & Real-Time Decision Making Engines, though I can't spill all the details just yet.</p>
+            <p>I'm also writing a paper with a computer science professor on Self-Observing Agents & Real-Time Decision Making Engines, though I can't spill all the details just yet.</p>
 
-            <p>I love bringing my wild abstract ideas to life with Unity, Kotlin, Android Studio, and Full stack frameworks, but my true passion is in AI, Machine Learning & entrepreneurship. This has been a game-changer for my startups. My non-technical skills also include team management, public pitching in events, fund-raising, and working at hackathons, which have sharpened my communication and leadership skills.</p>
-
-            <p>One of my proudest moments was being considered for a $25K grant by Internet Computer (ICP), which shows the impact of my work.</p>
-
-            <p>I'm always up for new challenges and opportunities to innovate. Let's connect and create something awesome together!</p>
+            <p>I love bringing my wild abstract ideas to life with Unity, Kotlin, Android Studio, and Full stack frameworks, but my true passion is in AI, Machine Learning & entrepreneurship. This has been a game-changer for my startups. My non-technical skills also include team management, public pitching in events, fund-raising, and working at hackathons, which have greatly contributed to my professional development. My leadership skills come from my work as a project lead in various startups and team coordination. I truly enjoy bringing together the best minds to innovate and create cutting-edge technology.</p>
         </section>
 
         <section class="section experience">
-            <h2>Experience</h2>
+            <h2>My Experience</h2>
             <div class="experience-item">
-                <div class="date">2024 - Present</div>
-                <h3>Technical Team Lead</h3>
-                <h4>Locallu</h4>
-                <ul>
-                    <li>Leading a team of developers to create a multi-LLM interaction engine.</li>
-                </ul>
+                <h3>AI Engineer and Entrepreneur</h3>
+                <h4>41 Inc. - Kozot, Locallu, LegalDad</h4>
+                <span class="date">2022 - Present</span>
+                <p>Leading innovative AI projects and startups under 41 Inc. Developing smart devices for smart cities, multi-LLM engines for AGI, and making legal document preparation accessible and efficient.</p>
             </div>
+
             <div class="experience-item">
-                <div class="date">2024 - Present</div>
-                <h3>FullStack Dev</h3>
-                <h4>Rahul Advocate Office</h4>
-                <ul>
-                    <li>Solo Developed an Angular Site for a Lawyer's Office, my roles include development, deployment, maintenance, & security.</li>
-                </ul>
+                <h3>Freelance Developer</h3>
+                <h4>Self-Employed</h4>
+                <span class="date">2020 - 2022</span>
+                <p>Worked on various freelance projects involving game development, website creation, and machine learning model training.</p>
             </div>
+
             <div class="experience-item">
-                <div class="date">2024</div>
-                <h3>AI Engineer</h3>
-                <h4>Human Worker</h4>
-                <ul>
-                    <li>Developing a decentralized marketplace for AI-human task delegation.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <div class="date">June 2024 - Present</div>
-                <h3>Lead Developer</h3>
-                <h4>LegalDad</h4>
-                <ul>
-                    <li>Building a Conversational AI assistant for Legal Drafting for Lawyers from High Court of Madras Madurai.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <div class="date">Jan 2019 - Present</div>
-                <h3>Paralegal Assistant</h3>
-                <h4>Highcourt of Madras Madurai Branch</h4>
-                <ul>
-                    <li>Drafted Legal Docs, Arguments and offered legal advice to clients.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <div class="date">Oct 2023 - Present</div>
-                <h3>Crew Member</h3>
-                <h4>McDonalds</h4>
-                <ul>
-                    <li>Offer high quality customer service to customers.</li>
-                </ul>
+                <h3>Legal Assistant</h3>
+                <h4>Law Office of Rahul A</h4>
+                <span class="date">2018 - Present</span>
+                <p>Assisted with legal advice, drafting legal documents, and developing case arguments. Gained invaluable experience in the legal field, working closely with clients and legal professionals.</p>
             </div>
         </section>
 
         <section class="section life">
             <h2>Life</h2>
             <div class="life-section">
-                <p>Sharing my journey and important milestones:</p>
-                <img src="/mnt/data/image.png" alt="Image Description">
+                <img src="path/to/image.jpg" alt="Life Image">
+                <p>This is where I will talk about my life journey, experiences, and personal anecdotes that shape who I am today.</p>
             </div>
         </section>
+
+        <footer>
+            <p>&copy; 2024 Shridhara Pavel R. U. | <a href="mailto:pavel@example.com">Email me</a></p>
+        </footer>
     </div>
 
     <script>
         function copyEmailToClipboard() {
-            var email = "shridharapavel@email.com";
-            navigator.clipboard.writeText(email).then(function () {
-                alert("My email has been copied to your clipboard. Email me!");
-            }, function (err) {
-                console.error('Unable to copy email: ', err);
+            const email = "pavel@example.com";
+            navigator.clipboard.writeText(email).then(() => {
+                alert("Email copied to clipboard!");
             });
         }
     </script>

@@ -9,29 +9,14 @@
     <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="/Content/app.css">
     <style>
-        /* Custom styles for the navbar */
         .navbar {
-            background-color: #000; /* Black background for the navbar */
+            background-color: #1E1E1E;
             position: relative;
-            overflow: hidden; /* Ensure child elements don't overflow */
-        }
-
-        .navbar::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0%; /* Width of the grey notch */
-            height: 0px; /* Height of the grey notch */
-            background-color: #333; /* Dark grey accent */
-            border-radius: 20px; /* Rounded edges */
-            z-index: 0;
-            opacity: 0.9; /* Slight transparency */
+            overflow: hidden;
         }
 
         .navbar-nav .nav-link, .navbar-brand {
-            color: #FFD700; /* Yellow text color */
+            color: white;
             position: relative;
             z-index: 1;
         }
@@ -41,7 +26,7 @@
         }
 
         .navbar-nav .nav-link:hover, .navbar-brand:hover {
-            color: #fff; /* White text color on hover */
+            color: #fff;
         }
     </style>
 </head>
