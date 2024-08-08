@@ -176,7 +176,21 @@
     </script>
 
         <script>
-        $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
-        });
+      $(window).on("load", function() {
+    var currentPath = window.location.pathname;
+    console.log("Current path:", currentPath); // Log the current path
+
+    var authPages = ['/login', '/logout'];
+
+    if (authPages.some(page => currentPath.startsWith(page))) {
+        console.log("On auth page, loader remains."); // Log if it's an auth page
+        return;
+    }
+
+    console.log("Hiding loader."); // Log when hiding the loader
+    $(".loader-wrapper").fadeOut("slow", function() {
+        $(this).remove();
+    });
+});
+
     </script>

@@ -35,7 +35,8 @@ let displayLoginForm = (req, res, next) => {
 
     res.render('auth/login', { 
         title: 'Login', 
-        messages: messages 
+        messages: messages,
+        checker: 1 
     });
 };
 
