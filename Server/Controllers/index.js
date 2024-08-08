@@ -24,9 +24,20 @@ function DisplayAbout(req, res, next) {
   });
 }
 
+function DisplayCv(req, res, next) {
+  let date = new Date();
+
+  res.render('Cv', {
+    title: 'CV',
+    date: date,
+    user: req.user
+  });
+}
+
 module.exports = {
  DisplayHome: DisplayHome,
- DisplayAbout: DisplayAbout
+ DisplayAbout: DisplayAbout,
+ DisplayCv: DisplayCv
 }
 
   

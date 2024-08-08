@@ -21,4 +21,10 @@ router.get('/about', (req, res, next) => {
     IndexController.DisplayAbout(req, res, next);
 });
 
+/* GET: /about */
+router.get('/cv', (req, res, next) => {
+    IndexController.DisplayCv(req, res, next);
+});
+
+
 module.exports = router;
