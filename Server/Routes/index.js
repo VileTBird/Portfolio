@@ -30,5 +30,8 @@ router.get('/life', (req, res, next) => {
     IndexController.DisplayLife(req, res, next);
 });
 
+router.get('/social', (req, res, next) => {
+    IndexController.DisplaySocial(req, res, next);
+});
 
 module.exports = router;

@@ -41,12 +41,20 @@ function DisplayLife(req, res, next) {
   });
 }
 
+function DisplaySocial(req, res, next) {
+  res.render('social', {
+    title: 'social',
+    user: req.user
+  });
+}
+
 
 module.exports = {
  DisplayHome: DisplayHome,
  DisplayAbout: DisplayAbout,
  DisplayCv: DisplayCv,
- DisplayLife: DisplayLife
+ DisplayLife: DisplayLife,
+ DisplaySocial: DisplaySocial
 }
 
   
