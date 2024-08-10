@@ -3,31 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Feed</title>
+    <title>Special Moments</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #1e1e1e; /* Dark gray background */
             margin: 0;
             padding: 0;
-            text-align: center;
+            color: #f5f5f5; /* Light gray text color */
         }
-        #twitter-feed {
-            margin: 0 auto;
-            max-width: 600px;
-            background: #fff;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #333; /* Slightly lighter gray background for the content area */
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        h1, h2 {
+            color: #f9c74f; /* Yellow for headings */
+        }
+        p {
+            line-height: 1.6;
+        }
+        .video-container {
+            margin-bottom: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section p {
+            background-color: #444; /* Slightly lighter gray background for text sections */
+            padding: 15px;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <h1>Recent Tweets from @asuraspru</h1>
-    <div id="twitter-feed">
-        <!-- Embed code starts here -->
-        {{{embedCode}}}
-        <!-- Embed code ends here -->
+    <div class="container">
+        <div class="section">
+            <h2>My Journey into Robotics</h2>
+            <p>
+               Whenever I see someone say they’ve been coding since they were 11, it totally intimidates me, and I immediately put them on a pedestal. But I had this pretty cool realization that shifted my perspective. I’ve always had a crush on robotics & intelligent systems. I got into robotics, Arduino, and hardware programming when I was around 14-15. Before that, at 12, I was making makeshift projects with random junk at home—like lighters and other weird stuff. It was interesting, to say the least, but nothing really came of it.
+
+Still, that drive from those early days gives me the strength to pursue really cool projects and papers I’m working on now at Kozot with my founding partner and close friend. Looking back, some of those first projects were pretty cringy, but they’ve got a special place in my heart. I’ve got a couple of videos showcasing those early attempts which is just soooo adorable. I even got as far as making remote-controlled cars with servo arms, though I can’t seem to find any presentations or videos of those projects.
+            </p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GWWyKhdvurU?si=xi2l_KXM9SFYIb4T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/nGj4MRl_BWw?si=0Jb9cblkk-GcHatm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+         <div class="section">
+            <h2>25k Grant for h241</h2>
+            <p>
+               I remember feeling extremely nervous when we were waiting to hear back about the grant. We had this fantastic idea and already had 100 users in 3 days, but we were stuck with some critical bugs that kept us from having a functional MVP. When they announced the winners for the usual prizes, ranging from $2K to $1K, I figured it was a lost cause for us. Then, out of the blue, they dropped the bomb that ICP was considering a $25K grant for our project because of its execution, approach and the ideas nature. Even though I kept my cool in response, inside, I was absolutely screaming. Even if we didn't continue development of h241 nor receive the grant this is a very fond memory that kickstarted my startup journey.
+            </p>
+            <div class="video-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/2b8tK_mhWiM?si=Ce9mQpOyvplxK_lH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+

@@ -8,6 +8,7 @@ const passport = require('passport');
 const session = require('express-session');
 const axios = require('axios');
 
+
 // Routing modules
 const indexRouter = require('../Routes/index');
 const mediaRouter = require('../Routes/media');
@@ -23,7 +24,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // DB connection
 mongoose.connect(process.env.CONNECTION_STRING, {})
-  .then((res) => { console.log('Connected to MongoDB') })
+  .then(() => { console.log('Connected to MongoDB') })
   .catch((err) => { console.log(`Connection failure: ${err}`) });
 
 // View engine setup
@@ -70,16 +71,7 @@ hbs.registerHelper('selectOption', (currentValue, selectedValue) => {
 app.use('/img', express.static(path.join(__dirname, '../../Client/Assets/images')));
 app.use('/', indexRouter);
 
-// Fetch and render Twitter embed code
-app.get('/social', async (req, res) => {
-  try {
-    const response = await axios.get('https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2Fasuraspru');
-    const embedCode = response.data.html;
-    res.render('social', { embedCode });
-  } catch (error) {
-    res.status(500).send('Error fetching Twitter embed code');
-  }
-});
+
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {

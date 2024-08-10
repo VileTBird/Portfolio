@@ -1,4 +1,5 @@
 const User = require('../Models/user');
+const { TwitterApi } = require('twitter-api-v2');
 
 /**
  * This function will display the home page
@@ -41,12 +42,27 @@ function DisplayLife(req, res, next) {
   });
 }
 
-function DisplaySocial(req, res, next) {
-  res.render('social', {
-    title: 'social',
-    user: req.user
-  });
-}
+const client = new TwitterApi({
+  appKey: 'Lt7BUMTpK7USFAFNzgklpsDJd',
+  appSecret: 'GFTGL3QCqqxm9g8QsWCXon2wRqQa5fWtsnyANrySLC9lI9Nwjd',
+  accessToken: '1519152886915215360-Dlm9HpBVOS4SwvydUb0sRDz1Ccl6jn',
+  accessSecret: 'your-access-secret',
+});
+
+const DisplaySocial = async (req, res, next) => {
+  // try {
+    // const userTimeline = await client.v2.userTimeline('user_id', { max_results: 5 });
+    // const tweets = userTimeline.data;
+
+    res.render('social', {
+      title: 'social',
+      user: req.user
+    });
+ // } catch (error) {
+ //   console.error('Error fetching tweets:', error);
+    // res.status(500).send('Error fetching tweets');
+ //}
+};
 
 
 module.exports = {
