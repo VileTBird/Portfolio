@@ -2,8 +2,8 @@
 let Media = require('../Models/media');
 
 let index = async (req, res, next) => {
-    // fetch all media docs 
-    let media = await Media.find();
+    // fetch all media docs sorted by creation date
+    let media = await Media.find().sort({ createdAt: -1 });
 
     console.log(media);
     res.render('media/index', { 
@@ -12,6 +12,7 @@ let index = async (req, res, next) => {
         user: req.user
     });
 };
+
 
 let displayCreateForm = (req, res, next) => {
     res.render('media/create', { title: 'Add New Media',

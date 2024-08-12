@@ -11,7 +11,7 @@ let mediaSchema = new mongoose.Schema({
         required: true
     },
     releaseYear: {
-        type: Number,
+        type: String,
         required: true
     },
     provider: {
@@ -35,7 +35,8 @@ let mediaSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+}, { timestamps: true });
+
 
 let Media = mongoose.model('Media', mediaSchema);
 module.exports = Media;

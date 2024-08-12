@@ -2,7 +2,7 @@ let Blog = require('../Models/blog');
 
 // Fetch all blog posts
 let index = async (req, res, next) => {
-    let blogs = await Blog.find();
+    let blogs = await Blog.find().sort({ createdAt: -1 });
 
     console.log(blogs);
     res.render('blog/index', { 
