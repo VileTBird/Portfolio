@@ -53,11 +53,46 @@ let displayDetail = async (req, res, next) => {
     res.render('blog/detail', { 
         title: 'View New Post',
         blog: blog,
-        user: req.user 
+        user: req.user,
+        comments: blog.comments,
+        likes: blog.likes
     });
 };
 
+// Add a like to a blog post
+let likeBlog = async (req, res, next) => {
+    let blog = await Blog.findById(req.params._id);
+    blog.likes += 1;
+    await blog.save();
+    res.redirect(`/blog`);
+};
+
+let addComment = async (req, res, next) => {
+    try {
+        let blog = await Blog.findById(req.params._id);
+        if (!blog) {
+            return res.status(404).send('Blog post not found');
+        }
+        
+        blog.comments.push({
+            username: req.body.username || 'Anonymous',
+            content: req.body.content,
+            createdAt: new Date()
+        });
+        
+        await blog.save();
+        res.redirect(`/blog/detail/${req.params._id}`);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server Error');
+    }
+};
+
+
+
+
+
 // Make public
 module.exports = {
-    index, displayCreateForm, createBlog, deleteBlog, displayEditForm, updateBlog, displayDetail
+    index, displayCreateForm, createBlog, deleteBlog, displayEditForm, updateBlog, displayDetail, likeBlog, addComment
 };

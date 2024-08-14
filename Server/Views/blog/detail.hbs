@@ -67,6 +67,84 @@
             font-weight: bold;
         }
 
+        .comments-section {
+            margin-top: 40px;
+        }
+
+        .comments-header {
+            font-size: 28px;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .comment {
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #3A3A3A;
+            border-radius: 15px;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .comment-content {
+            margin-top: 10px;
+            color: #E0E0E0;
+        }
+
+        .comment-form-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .comment-form {
+            display: none;
+            background-color: #2A2A2A;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #FFD700;
+            background-color: #3A3A3A;
+            color: #FFD700;
+            font-size: 16px;
+        }
+
+        .comment-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 1px solid #FFD700;
+            background-color: #3A3A3A;
+            color: #FFD700;
+            font-size: 16px;
+        }
+
+        .comment-form button {
+            background-color: #FFD700;
+            color: #1E1E1E;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .comment-form button:hover {
+            background-color: #F1C40F;
+        }
+
         .scroll-to-top {
             display: block;
             margin: 20px auto;
@@ -85,6 +163,24 @@
 
         .scroll-to-top:hover {
             background-color: #F1C40F;
+        }
+
+         .action-buttons {
+            margin-top: 20px;
+        }
+
+        .action-buttons a {
+            background-color: #333333;
+            color: #FFFFFF;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-buttons a:hover {
+            background-color: #444444;
         }
     </style>
 </head>
@@ -106,8 +202,46 @@
                 <span>{{this}}</span>
             {{/each}}
         </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <div class="comments-header">Comments</div>
+            {{#each blog.comments}}
+                <div class="comment">
+                    <div class="comment-author">{{this.username}}</div>
+                    <div class="comment-content">{{this.content}}</div>
+                    <div class="comment-meta">{{this.createdAt}}</div>
+                </div>
+            {{/each}}
+        </div>
+
+        <!-- Comment Form Toggle Button -->
+        <div class="comment-form-container">
+            <button type="button" class="btn btn-warning" onclick="toggleCommentForm()">Add a Comment</button>
+
+            <!-- Comment Form -->
+            <div id="comment-form" class="comment-form">
+                <form method="POST" action="/blog/comment/{{blog._id}}">
+                    <input type="text" name="username" placeholder="Your name (optional)" />
+                    <textarea name="content" rows="4" placeholder="Write your comment here..." required></textarea>
+                    <button type="submit">Post Comment</button>
+                </form>
+            </div>
+
+        </div>
     </div>
+    
     <a href="#top" class="scroll-to-top" title="Scroll to Top">↑</a>
+
+    <script>
+        function toggleCommentForm() {
+            var form = document.getElementById('comment-form');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
-

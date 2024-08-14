@@ -52,7 +52,6 @@
             line-height: 1.8;
             margin-bottom: 15px;
             color: #B0B0B0;
-            /* Limit display to the first paragraph */
             overflow: hidden;
             text-overflow: ellipsis;
             max-height: 4.5em;
@@ -69,8 +68,6 @@
         .blog-post a {
             color: #FFD700;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
             transition: color 0.3s ease;
         }
 
@@ -78,28 +75,54 @@
             color: #FFA500;
         }
 
-        .action-buttons {
+        .interaction-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 20px;
         }
 
-        .action-buttons a {
-            background-color: #333333;
-            color: #FFFFFF;
-            border-radius: 5px;
-            padding: 10px 15px;
-            text-decoration: none;
-            margin-right: 10px;
-            transition: background-color 0.3s ease;
+        .interaction-icons {
+            display: flex;
+            align-items: center;
         }
 
-        .action-buttons a:hover {
-            background-color: #444444;
+        .interaction-icons button {
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 8px 12px; /* Adjusted padding to fit content */
+    border-radius: 50px; /* Change to make it an oval shape */
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1; /* Ensure proper alignment of text */
+}
+
+.interaction-icons button:hover {
+    background-color: #444444;
+    transform: scale(1.1);
+}
+
+.interaction-icons button span {
+    margin-left: 8px; /* Space between icon and count */
+    font-size: 16px;
+}
+
+        .interaction-icons .like-count {
+            margin-left: 5px;
+            font-size: 16px;
         }
 
     </style>
 </head>
 <body>
     <h2 style="text-align: center;">Blog</h2>
+    <h6 style="text-align: center;">I don't expect anyone to read my blogs or like/comment on them but this page is more for me than anything to observe & structure my mindset development over time.</h6>
     <div class="blog-container">
         {{#if user}}
             <div class="action-buttons">
@@ -112,7 +135,22 @@
             <h5>{{this.title}}</h5>
             <p>{{this.content}}</p>
             <p class="tags">Tags: {{#each this.tags}}{{this}} {{/each}}</p>
-            <a href="/blog/detail/{{this._id}}">Read More</a>
+
+            <div class="interaction-container">
+                <a href="/blog/detail/{{this._id}}">Read More</a>
+                <div class="interaction-icons">
+                    <form method="post" action="/blog/like/{{this._id}}">
+                        <input type="hidden" name="like" value="1">
+                        <button type="submit" >
+                            👍 <span >{{this.likes}}</span>
+                        </button>
+                    </form>
+                    <button>
+                        <span class="comment-button" onclick="scrollToComments('{{this._id}}')">💬</span>
+                    </button>
+                    
+                </div>
+            </div>
 
             {{#if ../user}}
             <div class="action-buttons">
@@ -123,5 +161,12 @@
         </div>
         {{/each}}
     </div>
+
+    <script>
+    function scrollToComments(postId) {
+        window.location.href = `/blog/detail/${postId}#comments`;
+    }
+    </script>
+
 </body>
 </html>

@@ -38,4 +38,17 @@ router.get('/detail/:_id', (req, res, next) => {
     blogController.displayDetail(req, res, next);
 });
 
+
+/* POST: /blog/like/:_id => like a blog post */
+router.post('/like/:_id', (req, res, next) => {
+    blogController.likeBlog(req, res, next);
+});
+
+/* POST: /blog/comment/:_id => add a comment to a blog post */
+router.post('/comment/:_id', (req, res, next) => {
+    blogController.addComment(req, res, next);
+});
+
+
+
 module.exports = router;
