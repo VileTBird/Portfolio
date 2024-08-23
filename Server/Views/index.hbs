@@ -1,218 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shridhara Pavel R. U</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&family=Roboto:wght@300&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Shridhara Pavel R. U - Home</title>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #1E1E1E;
-            color: #E0E0E0;
-            margin: 0;
-            padding: 0;
+        .container{
+            border-radius: 10px; 
+            padding: 20px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 2px 5px rgba(0, 255, 0, 0.5);
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
+        .profile-section {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 40px 20px;
-            background-color: #252424;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 2px 5px rgba(0, 255, 0, 0.5);
+            
         }
-
-        .text-content {
-            flex: 1;
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #33ff33;
             margin-right: 20px;
         }
-
-        header h1 {
-            font-family: 'Lora', serif;
-            font-size: 36px;
-            font-weight: bold;
-            color: #FFD700;
+        .profile-text {
+            flex: 1;
+        }
+        .glitch-effect {
+            font-size: 2.5em;
             margin-bottom: 10px;
         }
-
-        header p {
-            font-size: 18px;
-            color: #B0B0B0;
-            margin: 10px 0;
-        }
-
-        header img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #FFD700;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
         .section {
-            margin: 40px 0;
-            padding: 30px;
-            background-color: #252424;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px; 
+            padding: 20px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 2px 5px rgba(0, 255, 0, 0.5);
         }
-
         .section h2 {
-            font-size: 28px;
-            border-bottom: 2px solid #FFD700;
-            padding-bottom: 5px;
-            color: #FFD700;
-            margin-bottom: 20px;
+            border-bottom: 1px solid #33ff33;
+            padding-bottom: 10px;
         }
-
-        .about p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 20px 0;
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
-        .about ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .about li {
-            background-color: #333333;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            header h1 {
-                font-size: 32px;
-            }
-
-            header p {
-                font-size: 16px;
-            }
-
-            .section h2 {
-                font-size: 24px;
-            }
-
-            .about li {
-                font-size: 16px;
-                padding: 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section {
-                padding: 20px;
-            }
-
-            .section h2 {
-                font-size: 22px;
-            }
-
-            .about p {
-                font-size: 16px;
-            }
-
-            .about li {
-                font-size: 14px;
-                padding: 10px;
-            }
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1E1E1E;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        footer p {
-            font-size: 14px;
-            color: #B0B0B0;
-        }
-
-        footer p a {
-            color: #FFD700;
+        .skill-item {
+            background-color: #1a1a1a;
+            border: 1px solid #33ff33;
+            padding: 5px 10px;
+            border-radius: 15px;
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <div class="text-content">
-                <h1>Shridhara Pavel R. U</h1>
+    <div >
+        <section class="profile-section section">
+
+            <div class="profile-text">
+                <h1 class="glitch-effect" data-text="bozo10n">bozoten | pavel.r.u</h1>
                 <p>AI Developer | Founder | Aspiring Roboticist</p>
-                <p>Explore my portfolio, projects, blog, and daily life. Reach out via social media or email for collaboration, recruitment, or a chat.</p>
             </div>
-            <img src="https://media.licdn.com/dms/image/D5603AQHAW3vKVHqEmw/profile-displayphoto-shrink_400_400/0/1722446789982?e=1728518400&v=beta&t=nUeTrhIUc0A46Np4-rHVPq06ZrUyLOW6uomeTAV7VPg" alt="Shridhara Pavel" />
-        </header>
+        </section>
 
-        <section class="section about">
-            <h2>Who is this guy?</h2>
-            <div class="about-content">
-                <p>I'm <strong>Pavel</strong>, a passionate tech nerd. Over the past few years, I've been focusing on AI research, freelancing, and driving innovation through startups.</p>
+        <section class="section">
+            <h2>About Me</h2>
+            <p>I'm <strong>Pavel</strong>, a huge nerd focusing on AI research, freelancing, and startups. </p>
+        </section>
 
-                <div class="highlights">
-                    <p>Here's a quick snapshot of my startups:</p>
-                    <ul>
-                        <li><strong>Kozot:</strong> Crafting smart devices & robotics, designing protocols for smart cities.</li>
-                        <li><strong>Locallu:</strong> Building the world's first multi-LLM interaction x human engine for a groundbreaking approach to AGI.</li>
-                        <li><strong>LegalAppa:</strong> Simplifying legal document prep for everyone.</li>
-                    </ul>
-                </div>
+        <section class="section">
+            <h2>My Startups</h2>
+            <ul>
+                <li><strong>Bozot:</strong> Smart devices & robotics, designing protocols for smart cities.</li>
+                <li><strong>Locallu:</strong> Cheapest Freelance Marketplace.</li>
+                <li><strong>LegalAppa:</strong> Simplifying legal document preparation for everyone.</li>
+            </ul>
+        </section>
 
-                <div class="experience">
-                    <p>I’m currently co-authoring a research paper on Multi-Agent Robotics & Real-Time Decision-Making Engines with a computer science professor. Although I can't share too many details yet, it's an exciting project that's pushing the boundaries of what's possible in AI.</p>
-                </div>
+        <section class="section">
+            <h2>Current Projects</h2>
+            <p>Co-authoring a research paper on Multi-Agent Systems & Real-Time Decision-Making Agents with a computer science professor. This exciting project is pushing the boundaries of AI capabilities.</p>
+        </section>
 
-                <div class="skills">
-                    <p>My technical toolkit includes:</p>
-                    <ul class="skills-list">
-                        <li>Unity</li>
-                        <li>Machine Learning & AI development</li>
-                        <li>Kotlin & Android Studio</li>
-                        <li>Full-stack frameworks</li>     
-                    </ul>
-                    <p>But what truly sets me apart is my passion for <strong>entrepreneurship</strong> and <strong>team leadership</strong>. I’ve honed my skills in:</p>
-                    <ul class="skills-list">
-                        <li>Team management</li>
-                        <li>Public pitching & fundraising</li>
-                        <li>Project leadership in startups</li>
-                        <li>Hackathon participation</li>
-                    </ul>
-                </div>
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-list">
+                <span class="skill-item">Unity</span>
+                <span class="skill-item">Machine Learning</span>
+                <span class="skill-item">AI Development</span>
+                <span class="skill-item">Kotlin</span>
+                <span class="skill-item">Android Studio</span>
+                <span class="skill-item">Full-stack Frameworks</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Entrepreneurial Skills</h2>
+            <div class="skills-list">
+                <span class="skill-item">Team Management</span>
+                <span class="skill-item">Public Pitching</span>
+                <span class="skill-item">Fundraising</span>
+                <span class="skill-item">Project Leadership</span>
+                <span class="skill-item">Hackathon Participation</span>
             </div>
         </section>
     </div>
-</body>
 
+    <script>
+        // Typing effect for headings
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('h2');
+            headers.forEach(header => {
+                typeEffect(header, 100);
+            });
+        });
+
+        function typeEffect(element, speed) {
+            const text = element.innerHTML;
+            element.innerHTML = '';
+            
+            let i = 0;
+            const timer = setInterval(function() {
+                if (i < text.length) {
+                    element.append(text.charAt(i));
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, speed);
+        }
+    </script>
+</body>
 </html>
