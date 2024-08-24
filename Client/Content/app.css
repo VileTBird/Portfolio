@@ -2,7 +2,7 @@
 
 /* Custom CSS */
 body {
-    font-family: 'Roboto', sans-serif;
+
     background-color: #1E1E1E;
     color: #FFD700;
     position: relative;
@@ -162,14 +162,14 @@ h1.glitch-effect::after {
 
 h1.glitch-effect::before {
     left: 2px;
-    text-shadow: -2px 0 #ff00ff;
+    text-shadow: -2px 0 #00fbff;
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
 h1.glitch-effect::after {
     left: -2px;
-    text-shadow: -2px 0 #00ffff;
+    text-shadow: -2px 0 #0011ff;
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim2 5s infinite linear alternate-reverse;
 }

@@ -11,12 +11,22 @@
             margin-bottom: 30px; 
             box-shadow: 0 2px 5px rgba(0, 255, 0, 0.5);
         }
-        .profile-section {
+       .profile-section {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px; 
             margin-bottom: 30px; 
             box-shadow: 0 2px 5px rgba(0, 255, 0, 0.5);
-            
+        }
+
+        .profile-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-text {
+            margin-right: 20px;
         }
         .profile-image {
             width: 150px;
@@ -33,6 +43,7 @@
             margin-bottom: 10px;
         }
         .section {
+            color: #B0B0B0;
             border-radius: 10px; 
             padding: 20px; 
             margin-bottom: 30px; 
@@ -49,19 +60,84 @@
         }
         .skill-item {
             background-color: #1a1a1a;
-            border: 1px solid #33ff33;
+            border: 1px solid #B0B0B0;;
             padding: 5px 10px;
             border-radius: 15px;
         }
+
+        .social-buttons {
+    display: flex;
+            flex-direction: column;
+}
+
+.glitch-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: #0f0;
+    text-decoration: none;
+    border: 1px solid #0f0;
+    border-radius: 12px;
+    font-family: monospace;
+    font-size: 1em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.glitch-button:hover {
+    background-color: rgba(4, 0, 255, 0.679);
+
+}
+
+.glitch-button::before,
+.glitch-button::after {
+
+    position: absolute;
+    top: 0;
+    left: 1;
+    width: 100%;
+    height: 100%;
+    color: #0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.glitch-button::before {
+    text-shadow: 2px 0 red;
+    animation: glitch-anim 2s infinite;
+}
+
+.glitch-button::after {
+    text-shadow: -2px 0 blue;
+    animation: glitch-anim 2.5s infinite;
+}
+
+
     </style>
 </head>
 <body>
     <div >
-        <section class="profile-section section">
-
-            <div class="profile-text">
-                <h1 class="glitch-effect" data-text="bozo10n">bozoten | pavel.r.u</h1>
-                <p>AI Developer | Founder | Aspiring Roboticist</p>
+       <section class="profile-section section">
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h1 class="glitch-effect" data-text="bozo10n">bozoten | pavel</h1>
+                    <p>Developer | Founder | Aspiring Roboticist</p>
+                </div>
+            </div>
+            <div class="social-buttons">
+                <a href="https://twitter.com/bozo10n" class="glitch-button" data-text="itter">
+                    <i class="fa-brands fa-x-twitter"></i>
+            
+                </a>
+                <a href="https://github.com/bozoten" class="glitch-button" data-text="tHub">
+                    <i class="fab fa-github"></i>
+            
+                </a>
             </div>
         </section>
 
@@ -81,23 +157,21 @@
 
         <section class="section">
             <h2>Current Projects</h2>
-            <p>Co-authoring a research paper on Multi-Agent Systems & Real-Time Decision-Making Agents with a computer science professor. This exciting project is pushing the boundaries of AI capabilities.</p>
+            <p>Co-authoring a research paper with a computer science professor on Multi-Agent Systems for smart cities with a working prototype.</p>
         </section>
 
         <section class="section">
             <h2>Technical Skills</h2>
             <div class="skills-list">
-                <span class="skill-item">Unity</span>
                 <span class="skill-item">Machine Learning</span>
-                <span class="skill-item">AI Development</span>
-                <span class="skill-item">Kotlin</span>
-                <span class="skill-item">Android Studio</span>
+                <span class="skill-item">IOS-Android App Development</span>
+                <span class="skill-item">Unity</span>
                 <span class="skill-item">Full-stack Frameworks</span>
             </div>
         </section>
 
         <section class="section">
-            <h2>Entrepreneurial Skills</h2>
+            <h2>Soft Skills</h2>
             <div class="skills-list">
                 <span class="skill-item">Team Management</span>
                 <span class="skill-item">Public Pitching</span>
@@ -132,5 +206,7 @@
             }, speed);
         }
     </script>
+
+    
 </body>
 </html>
