@@ -34,4 +34,8 @@ router.get('/social', (req, res, next) => {
     IndexController.DisplaySocial(req, res, next);
 });
 
+
+router.get('/worklog', (req, res, next) => {
+    IndexController.DisplayWorklog(req, res, next);
+});
 module.exports = router;

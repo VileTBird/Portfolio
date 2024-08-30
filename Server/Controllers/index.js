@@ -64,13 +64,21 @@ const DisplaySocial = async (req, res, next) => {
  //}
 };
 
+function DisplayWorklog(req, res, next) {
+  res.render('worklog', {
+    title: 'worklog',
+    user: req.user
+  });
+}
+
 
 module.exports = {
  DisplayHome: DisplayHome,
  DisplayAbout: DisplayAbout,
  DisplayCv: DisplayCv,
  DisplayLife: DisplayLife,
- DisplaySocial: DisplaySocial
+ DisplaySocial: DisplaySocial,
+ DisplayWorklog: DisplayWorklog
 }
 
   
